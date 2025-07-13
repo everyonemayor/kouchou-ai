@@ -69,17 +69,17 @@ export default async function Page() {
               </Text>
               <List.Root pl={8} fontSize="xs">
                 <List.Item color="blue.500">
-                  <Link href="https://dd2030.org/kouchou-ai">
+                  <Link href="https://dd2030.org/kouchou-ai/" target="_blank" rel="noopener noreferrer">
                     デジタル民主主義2030 広聴AI
                   </Link>
                 </List.Item>
                 <List.Item color="blue.500">
-                  <Link href="https://github.com/digitaldemocracy2030/kouchou-ai">
+                  <Link href="https://github.com/digitaldemocracy2030/kouchou-ai/" target="_blank" rel="noopener noreferrer">
                     広聴AI GitHub
                   </Link>
                 </List.Item>
                 <List.Item color="blue.500">
-                  <Link href="https://www.docswell.com/s/tokoroten/ZL1M88-2025-06-14-014546">
+                  <Link href="https://www.docswell.com/s/tokoroten/ZL1M88-2025-06-14-014546/" target="_blank" rel="noopener noreferrer">
                     広聴AI技術解説 ブロードリスニングを支える技術
                   </Link>
                 </List.Item>

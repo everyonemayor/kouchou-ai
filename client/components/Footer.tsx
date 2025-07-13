@@ -55,7 +55,7 @@ const Dialog = ({ title, trigger, children }: { title: string; trigger: ReactNod
 export function Footer({ meta }: Props) {
   return (
     <Box as="footer" color="gray.800">
-      <Box bg="url('/images/footer-bg.webp')" 
+      <Box bg="url('/kouchou-ai/images/footer-bg.webp')" 
         bgSize="cover"
         bgPos="center" py={{ base: "6", md: "10" }} px={{ base: "6", md: "12" }} mx="auto">
         <Flex
