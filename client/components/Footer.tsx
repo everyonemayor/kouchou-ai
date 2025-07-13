@@ -5,7 +5,6 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { type ReactNode, useRef } from "react";
-import { GitHubIcon, NoteIcon, SlackIcon, XIcon } from "./icons/MediaIcons";
 import { Button } from "./ui/button";
 import {
   DialogActionTrigger,
@@ -18,7 +17,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
-import { Link } from "./ui/link";
 
 type Props = {
   meta: Meta;
@@ -57,10 +55,44 @@ const Dialog = ({ title, trigger, children }: { title: string; trigger: ReactNod
 export function Footer({ meta }: Props) {
   return (
     <Box as="footer" color="gray.800">
-      <Box
-        bg="url('/images/footer-bg.webp')"
+      <Box bg="url('/images/footer-bg.webp')" 
         bgSize="cover"
-        bgPos="center"
+        bgPos="center" py={{ base: "6", md: "10" }} px={{ base: "6", md: "12" }} mx="auto">
+        <Flex
+          bg="white"
+          py="8"
+          px="8"
+          borderRadius="3xl"
+          maxW="1024px"
+          mx="auto"
+          flexDirection={{ base: "column", lg: "row" }}
+          alignItems={{ base: "center" }}
+          gap="8"
+        >
+          <Flex flexDirection="column" gap="4">
+            <Text>
+              「全員市長」はXXX
+            </Text>
+            <Flex gap="3" flexWrap="wrap">
+              <Button variant="primary" asChild size="xl" color="#174ea1" bg="#fff6ea" border="2px solid #174ea1">
+                <a href="https://forms.gle/Rgm933nyqJovdr4DA" rel="noopener noreferrer" target="_blank">
+                  意見やアイデアはこちらから
+                  <ArrowUpRight />
+                </a>
+              </Button>
+              <Button variant="secondary" asChild size="xl" color="#174ea1" border="2px solid #174ea1">
+                <a href="https://note.com/gen_supporter/n/nbefe0a67e567" rel="noopener noreferrer" target="_blank">
+                  全員市長詳細
+                  <ArrowUpRight />
+                </a>
+              </Button>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Box>
+
+      <Box
+        bg="#F1F6F8"
         py={{ base: "6", md: "10" }}
         px={{ base: "6", md: "12" }}
       >
@@ -94,75 +126,11 @@ export function Footer({ meta }: Props) {
                   <ArrowUpRight />
                 </a>
               </Button>
-              <Dialog title="謝辞" trigger={<Button variant="secondary">謝辞</Button>}>
-                広聴AIは{" "}
-                <Link href="https://ai.objectives.institute/" target="_blank" rel="noopener noreferrer">
-                  AI Objectives Institute
-                </Link>{" "}
-                が開発した{" "}
-                <Link
-                  href="https://github.com/AIObjectives/talk-to-the-city-reports"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Talk to the City
-                </Link>{" "}
-                を参考に開発されています。ライセンスに基づいてソースコードを一部活用し、機能追加や改善を実施しています。
-              </Dialog>
             </Flex>
           </Flex>
         </Flex>
       </Box>
-      <Box bg="#F1F6F8" py={{ base: "6", md: "10" }} px={{ base: "6", md: "12" }} mx="auto">
-        <Flex
-          bg="white"
-          py="8"
-          px="8"
-          borderRadius="3xl"
-          maxW="1024px"
-          mx="auto"
-          flexDirection={{ base: "column", lg: "row" }}
-          alignItems={{ base: "center" }}
-          gap="8"
-        >
-          <Image src="/kouchou-ai/images/dd2030-logo-full.svg" alt="デジタル民主主義2030" width={256} height={80} />
-          <Flex flexDirection="column" gap="4">
-            <Text textStyle="body/sm">
-              2030年には、情報技術により民主主義のあり方はアップデートされており、一人ひとりの声が政治・行政に届き、適切に合意形成・政策反映されていくような社会が当たり前になる、──そんな未来を目指して立ち上げられたのがデジタル民主主義2030プロジェクトです。
-            </Text>
-            <Flex gap="3" flexWrap="wrap">
-              <Button variant="secondary" asChild>
-                <a href="https://dd2030.org" rel="noopener noreferrer" target="_blank">
-                  プロジェクトサイト
-                  <ArrowUpRight />
-                </a>
-              </Button>
-              <Button variant="secondary" asChild>
-                <a href="https://x.com/dd2030jp" rel="noopener noreferrer" target="_blank">
-                  <XIcon />
-                </a>
-              </Button>
-              <Button variant="secondary" asChild _icon={{ width: "42px", height: "12px" }}>
-                <a href="https://note.com/dd2030" rel="noopener noreferrer" target="_blank">
-                  <NoteIcon />
-                </a>
-              </Button>
-              <Button variant="secondary" asChild>
-                <a href="https://dd2030.slack.com" rel="noopener noreferrer" target="_blank">
-                  <SlackIcon />
-                  slack
-                </a>
-              </Button>
-              <Button variant="secondary" asChild>
-                <a href="https://github.com/digitaldemocracy2030" rel="noopener noreferrer" target="_blank">
-                  <GitHubIcon />
-                  GitHub
-                </a>
-              </Button>
-            </Flex>
-          </Flex>
-        </Flex>
-      </Box>
+      
       <Box bg="white" py={{ base: "6", lg: "4" }} px={{ base: "6", md: "12" }} textAlign="center">
         <Flex
           maxW="1024px"

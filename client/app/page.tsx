@@ -1,8 +1,7 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Reporter } from "@/components/reporter/Reporter";
 import type { Meta, Report } from "@/type";
-import { Box, Card, HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, HStack, Heading, Image, List, Stack, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getApiBaseUrl } from "./utils/api";
@@ -56,9 +55,36 @@ export default async function Page() {
         <div className={"container"}>
           <Header />
           <Box mx={"auto"} maxW={"1024px"} mb={10}>
-            <Box mb="12">
-              <Reporter meta={meta} />
-            </Box>
+            <Stack mb="12" gap={5}>
+              <Text>
+                このサイトでは、仲川げんが掲げた「#全員市長」プロジェクトで集まった意見を集計し、広聴AIによって分析した結果をレポートしていきます。およそ100件の新たなデータが集まったタイミングで分析を行い、レポートを更新します。
+              </Text>
+              <Text>
+                分析は、寄せられたコメントから意見を抽出、カテゴリや方向性でグループ分けをします。グループ毎に要約され、また全体に占める割合なども加味して、全体の傾向も示しています。可視化された意見の分布や階層表示からは、全体の傾向だけでなく、一つ一つの意見を見ることもできます。ドットをクリックする、あるいは階層を進んでいくと個別の意見が表示されます。
+                
+              </Text>
+              <Text>広聴AIによる詳しい分析手順については、こちらをご覧ください。</Text>
+              <Text fontSize="xs">
+                *明らかな誹謗中傷、差別的な言葉や意見などは、フィルタリングされています。
+              </Text>
+              <List.Root pl={8} fontSize="xs">
+                <List.Item color="blue.500">
+                  <Link href="https://dd2030.org/kouchou-ai">
+                    デジタル民主主義2030 広聴AI
+                  </Link>
+                </List.Item>
+                <List.Item color="blue.500">
+                  <Link href="https://github.com/digitaldemocracy2030/kouchou-ai">
+                    広聴AI GitHub
+                  </Link>
+                </List.Item>
+                <List.Item color="blue.500">
+                  <Link href="https://www.docswell.com/s/tokoroten/ZL1M88-2025-06-14-014546">
+                    広聴AI技術解説 ブロードリスニングを支える技術
+                  </Link>
+                </List.Item>
+              </List.Root>
+            </Stack>
             <Heading textAlign={"left"} fontSize={"xl"} mb={8}>
               レポート一覧
             </Heading>
