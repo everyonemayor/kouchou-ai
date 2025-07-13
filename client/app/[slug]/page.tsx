@@ -1,3 +1,4 @@
+import { getRelativeUrl } from "@/app/utils/image-src";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Analysis } from "@/components/report/Analysis";
@@ -81,7 +82,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (process.env.NEXT_PUBLIC_OUTPUT_MODE === "export") {
       metaData.openGraph = {
-        images: [`${slug}/opengraph-image.png`],
+        images: [getRelativeUrl("/images/logo.png")],
       };
     }
 

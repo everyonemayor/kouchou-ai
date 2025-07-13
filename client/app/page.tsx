@@ -10,16 +10,13 @@ export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const metaResponse = await fetch(`${getApiBaseUrl()}/meta/metadata.json`);
-    const meta: Meta = await metaResponse.json();
-
     const { getBasePath, getRelativeUrl } = await import("@/app/utils/image-src");
 
     const metadata: Metadata = {
-      title: `${meta.reporter}のレポート一覧 - 広聴AI`,
-      description: meta.message || "",
+      title: "全員市長",
+      description: "仲川げんが掲げた「#全員市長」プロジェクトで集まった意見を集計し、広聴AIによって分析した結果をレポートしていきます。",
       openGraph: {
-        images: [getRelativeUrl("/meta/ogp.png")],
+        images: [getRelativeUrl("/images/logo.png")],
       },
     };
 
@@ -57,7 +54,7 @@ export default async function Page() {
           <Box mx={"auto"} maxW={"1024px"} mb={10}>
             <Stack mb="12" gap={5}>
               <Text>
-                このサイトでは、仲川げんが掲げた「#全員市長」プロジェクトで集まった意見を集計し、広聴AIによって分析した結果をレポートしていきます。およそ100件の新たなデータが集まったタイミングで分析を行い、レポートを更新します。
+                このサイトでは、仲川げんが掲げた「#全員市長」プロジェクトで集まった意見を集計し、広聴AIによって分析した結果をレポートしていきます。定期的に分析を行いレポートを更新します。
               </Text>
               <Text>
                 分析は、寄せられたコメントから意見を抽出、カテゴリや方向性でグループ分けをします。グループ毎に要約され、また全体に占める割合なども加味して、全体の傾向も示しています。可視化された意見の分布や階層表示からは、全体の傾向だけでなく、一つ一つの意見を見ることもできます。ドットをクリックする、あるいは階層を進んでいくと個別の意見が表示されます。

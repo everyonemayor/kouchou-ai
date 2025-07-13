@@ -71,7 +71,7 @@ export function Footer({ meta }: Props) {
         >
           <Flex flexDirection="column" gap="4">
             <Text>
-              「全員市長」はXXX
+              「#全員市長」は「こんな未来を作りたい」「こんな課題をこう解決したい」という奈良市への意見・アイディアを募集し、実際に次年度以降の取組に反映していくための取り組みです。奈良に住む人に限らず、誰でも参加できます。お気軽にご意見をお寄せください。
             </Text>
             <Flex gap="3" flexWrap="wrap">
               <Button variant="primary" asChild size="xl" color="#174ea1" bg="#fff6ea" border="2px solid #174ea1">
