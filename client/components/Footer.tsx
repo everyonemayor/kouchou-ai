@@ -82,7 +82,7 @@ export function Footer({ meta }: Props) {
               </Button>
               <Button variant="secondary" asChild size="xl" color="#174ea1" border="2px solid #174ea1">
                 <a href="https://note.com/gen_supporter/n/nbefe0a67e567" rel="noopener noreferrer" target="_blank">
-                  全員市長詳細
+                  #全員市長 詳細
                   <ArrowUpRight />
                 </a>
               </Button>
